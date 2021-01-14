@@ -13,9 +13,9 @@
             @csrf
 
             <div class="mb-4">
-                <label for="email" class=" sr-only">Email address</label>
+                <label for="email" class="font-medium text-gray-600 text-sm ml-1">Email address</label>
                 <input type="email" name="email" id="email"
-                    class="bg-gray-100 border-2 w-full px-4 py-3 rounded-lg @error('email') border-red-400 @enderror"
+                    class="bg-gray-100 border-2 w-full px-4 py-3 mt-2 rounded-lg @error('email') border-red-400 @enderror"
                     placeholder="Your email address" value="{{ old("email") }}">
 
                 @error('email')
@@ -23,14 +23,21 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="password" class=" sr-only">Password</label>
+                <label for="password" class="font-medium text-gray-600 text-sm ml-1">Password</label>
                 <input type="password" name="password" id="password"
-                    class="bg-gray-100 border-2 w-full px-4 py-3 rounded-lg @error('password') border-red-400 @enderror"
+                    class="bg-gray-100 border-2 w-full px-4 py-3 mt-2 rounded-lg @error('password') border-red-400 @enderror"
                     placeholder="Your password" value="">
 
                 @error('password')
                 <div class="text-red-400 test-sm mt-2">{{$message}}</div>
                 @enderror
+            </div>
+
+            <div class="mb-8">
+                <div class="flex items-center">
+                    <input type="checkbox" name="remember" id="remember" class="mr-4" checked>
+                    <label for="remember">Remember me</label>
+                </div>
             </div>
 
             <div>
