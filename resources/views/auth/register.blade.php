@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex justify-center">
+<div class="flex flex-col justify-center items-center">
+    <h2 class="w-5/12 text-2xl mb-8 font-medium text-center">Signup to FreeCodeGram</h2>
     <div class="w-5/12 bg-white p-6 rounded-lg">
         <form action="{{route("register")}}" method="post">
             @csrf

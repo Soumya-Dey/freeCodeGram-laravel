@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex justify-center">
+<div class="flex flex-col justify-center items-center">
+    <h2 class="w-5/12 text-2xl mb-8 font-medium text-center">Login to FreeCodeGram</h2>
     <div class="w-5/12 bg-white p-6 rounded-lg">
         @if (session("status"))
         <div class="bg-red-400 px-4 py-3 rounded-lg mb-6 text-white text-center">
@@ -35,7 +36,7 @@
 
             <div class="mb-8">
                 <div class="flex items-center">
-                    <input type="checkbox" name="remember" id="remember" class="mr-4" checked>
+                    <input type="checkbox" name="remember" id="remember" class="mr-4">
                     <label for="remember">Remember me</label>
                 </div>
             </div>
