@@ -47,5 +47,9 @@
             </div>
         </form>
     </div>
+
+    <p class="font-medium my-4">Don't have an account? &nbsp;<a class="text-green-500"
+            href="{{route("register")}}">Register
+            here</a></p>
 </div>
 @endsection

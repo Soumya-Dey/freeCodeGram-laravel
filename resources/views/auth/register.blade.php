@@ -71,5 +71,8 @@
             </div>
         </form>
     </div>
+
+    <p class="font-medium my-4">Alredy have an account? &nbsp;<a class="text-green-500" href="{{route("login")}}">Login
+            here</a></p>
 </div>
 @endsection

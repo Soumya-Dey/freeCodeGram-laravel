@@ -9,7 +9,9 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(12);
+        // eager loading the post along with the related user & likes
+        // to decrese the amount of queries performed
+        $posts = Post::with(['user', 'likes'])->paginate(12);
 
         return view("posts.index", [
             "posts" => $posts
