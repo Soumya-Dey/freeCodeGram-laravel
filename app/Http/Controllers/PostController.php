@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         // eager loading the post along with the related user & likes
         // to decrese the amount of queries performed
-        $posts = Post::with(['user', 'likes'])->paginate(12);
+        $posts = Post::orderBy('created_at', 'desc')->with(['user', 'likes'])->paginate(12);
 
         return view("posts.index", [
             "posts" => $posts
@@ -24,6 +24,15 @@ class PostController extends Controller
         ]);
 
         auth()->user()->posts()->create($request->only("body"));
+
+        return back();
+    }
+
+    public function destroy(Post $post, Request $request) {
+        // using 'delete' policy to check
+        // whether the user is authorized to delete the post or not
+        $this->authorize('delete', $post);
+        $post->delete();
 
         return back();
     }
